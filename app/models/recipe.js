@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Recipe.hasMany(models.RecipeRatings, {foreignKey: 'recipe_id'});
       Recipe.hasMany(models.RecipeLikes, {foreignKey: 'recipe_id'});
       Recipe.hasMany(models.RecipeComments, {foreignKey: 'recipe_id'});
-      Recipe.belongsToMany(models.Labels, { through: models.RecipeLabels, foreignKey});
+      Recipe.belongsToMany(models.Labels, { through: models.RecipeLabels, foreignKey: 'recipe_id'});
     }
   }
   Recipe.init({
