@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      RecipeLike.belongsTo(models.User, {foreignKey: 'user_id'});
+      RecipeLike.belongsTo(models.Recipe, {foreignKey: 'recipe_id'});
     }
   }
   RecipeLike.init({
